@@ -6,4 +6,8 @@ public class Compra {
         this.produto = new Produto(produto.getNome(), produto.getPreco());
         this.quantidade = quantidade;
     }
+
+    public int calcularValor() {
+        return this.produto.getPreco() * this.quantidade;
+   }
 }
