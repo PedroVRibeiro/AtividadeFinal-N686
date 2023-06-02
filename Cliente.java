@@ -15,6 +15,21 @@ public class Cliente {
         this.compras.add(novaCompra);
     }
 
+    public void pagar() {
+        int valorTotal = 0;
+        for (int i = 0; i <= compras.size(); i++) {
+            valorTotal += compras.get(i).calcularValor();
+
+            if (valorTotal > dinheiro) {
+                System.out.println("Dinheiro insuficiente. Saldo: " +dinheiro);
+            } else {
+                setDinheiro(dinheiro - valorTotal);
+                compras.remove(i);
+                System.out.println("Você ainda tem " + dinheiro);
+            }
+        }
+    }
+
     public void setDinheiro(int dinheiro) {
         this.dinheiro = dinheiro;
     }
