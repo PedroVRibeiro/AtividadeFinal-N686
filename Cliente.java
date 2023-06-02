@@ -30,6 +30,10 @@ public class Cliente {
         }
     }
 
+    public void sacarDinheiro(CaixaEletronico caixa, int valor) {
+      this.dinheiro += caixa.sacar(valor);
+  }
+
     public void setDinheiro(int dinheiro) {
         this.dinheiro = dinheiro;
     }
